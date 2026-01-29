@@ -1,5 +1,6 @@
 {
   "name": "personal-toolkit",
+  "version": "1.0.1",
   "owner": {
     "name": "Henry Bae"
   },
@@ -11,6 +12,11 @@
       "name": "overcooked",
       "source": "./plugins/overcooked",
       "description": "Overcooked-style notification sounds and background music"
+    },
+    {
+      "name": "vault",
+      "source": "./plugins/vault",
+      "description": "Obsidian vault management, session logging, research, and note-taking"
     }
   ]
 }
