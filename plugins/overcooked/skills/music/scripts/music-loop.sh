@@ -1,5 +1,10 @@
 #!/bin/bash
-MUSIC_DIR="${CLAUDE_PLUGIN_ROOT}/skills/music/sounds"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ -n "$PLUGIN_ROOT" ]; then
+    MUSIC_DIR="${PLUGIN_ROOT}/skills/music/sounds"
+else
+    MUSIC_DIR="$SCRIPT_DIR/../sounds"
+fi
 MUSIC_FILES=("$MUSIC_DIR"/*.wav)
 
 if [ ${#MUSIC_FILES[@]} -eq 0 ] || [ ! -f "${MUSIC_FILES[0]}" ]; then

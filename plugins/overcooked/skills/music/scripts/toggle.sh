@@ -1,6 +1,8 @@
 #!/bin/bash
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PLUGIN_ROOT="$(cd "$SCRIPT_DIR/../../.." && pwd)"
 MUSIC_PID_FILE="$HOME/.claude/.overcooked-music-pid"
-MUSIC_LOOP="${CLAUDE_PLUGIN_ROOT}/skills/music/scripts/music-loop.sh"
+MUSIC_LOOP="$SCRIPT_DIR/music-loop.sh"
 
 # Check if music is playing
 if [ -f "$MUSIC_PID_FILE" ]; then
@@ -16,6 +18,6 @@ if [ -f "$MUSIC_PID_FILE" ]; then
 fi
 
 # Music not playing - start it
-nohup "$MUSIC_LOOP" > /dev/null 2>&1 &
+PLUGIN_ROOT="$PLUGIN_ROOT" nohup "$MUSIC_LOOP" > /dev/null 2>&1 &
 echo $! > "$MUSIC_PID_FILE"
 echo "Music: PLAYING"

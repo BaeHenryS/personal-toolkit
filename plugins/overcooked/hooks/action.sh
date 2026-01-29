@@ -23,8 +23,8 @@ if [ -f "$PID_FILE" ]; then
     > "$PID_FILE"
 fi
 
-# Also kill any lingering afplay processes for our sounds
-pkill -f "afplay.*overcooked.*sounds" 2>/dev/null || true
+# Also kill any lingering afplay processes for notification sounds (not music)
+pkill -f "afplay.*/skills/toggle/sounds" 2>/dev/null || true
 
 # Play random putdown sound
 PUTDOWN_SOUNDS=("Item_PutDown_01.wav" "Item_PutDown_02.wav" "Item_PutDown_03.wav" "Item_PutDown_04.wav" "Item_PutDown_05.wav")
