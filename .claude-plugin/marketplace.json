@@ -1,0 +1,16 @@
+{
+  "name": "personal-toolkit",
+  "owner": {
+    "name": "Henry Bae"
+  },
+  "metadata": {
+    "description": "Henry's personal Claude Code plugins"
+  },
+  "plugins": [
+    {
+      "name": "overcooked",
+      "source": "./plugins/overcooked",
+      "description": "Overcooked-style notification sounds and background music"
+    }
+  ]
+}
